@@ -7,12 +7,12 @@ Analysis of one week of nginx access and error logs for humblebee.ai and hbai.de
 
 | Notebook | What it does |
 |---|---|
-| `analysis.ipynb` | Day 1: loads JSON and text access logs, fixes and merges them, saves `data/logs.parquet` |
-| `02_traffic_and_clients.ipynb` | Day 2: status codes, traffic over time, slow endpoints, client types, IP kinds, location |
-| `03_errors_and_causes.ipynb` | Day 3: 5xx per service, error bursts, nginx error logs, reloads, scanners, likely causes |
-| `04_all_domains_and_dashboard.ipynb` | Day 4: summary of all findings, loader run on every domain, saves `data/logs_all.parquet` |
+| `01_load_clean.ipynb` | Loads JSON and text access logs, fixes and merges them, saves `data/logs.parquet` |
+| `02_traffic_and_clients.ipynb` | Status codes, traffic over time, slow endpoints, client types, IP kinds, location |
+| `03_errors_and_causes.ipynb` | 5xx per service, error bursts, nginx error logs, reloads, scanners, likely causes |
+| `04_all_domains_and_dashboard.ipynb` | Summary of all findings, loader run on every domain, saves `data/logs_all.parquet` |
 
-`loader.py` holds the Day 1 loading code as reusable functions. `dashboard.py` is a Streamlit dashboard over the Parquet data. `PLAN.md` is the task checklist.
+`loader.py` holds the loading code from `01_load_clean.ipynb` as reusable functions. `dashboard.py` is a Streamlit dashboard over the Parquet data. `PLAN.md` is the task checklist.
 
 ## Key findings
 
@@ -38,7 +38,7 @@ pip install pandas pyarrow plotly jupyter streamlit
 ```
 
 1. Put the logs in `nginx-logs/<domain>/<subdomain>/`.
-2. Run `analysis.ipynb`. It creates `data/logs.parquet`.
+2. Run `01_load_clean.ipynb`. It creates `data/logs.parquet`.
 3. Run `02_traffic_and_clients.ipynb`, then `03_errors_and_causes.ipynb`.
 4. Run `04_all_domains_and_dashboard.ipynb`. It creates `data/logs_all.parquet`.
 5. Start the dashboard: `streamlit run dashboard.py`. It runs locally and is not deployed, because it needs the private data.

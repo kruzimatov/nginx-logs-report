@@ -7,7 +7,7 @@ import streamlit as st
 
 DATA = Path('data/logs_all.parquet')
 if not DATA.exists():
-    DATA = Path('data/logs.parquet')  # ponytail: falls back to Day 1 output until day4.ipynb has run
+    DATA = Path('data/logs.parquet')  # ponytail: falls back to 01_load_clean.ipynb output until 04_all_domains_and_dashboard.ipynb has run
 
 st.set_page_config(page_title='Nginx Log Dashboard', layout='wide')
 

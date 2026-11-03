@@ -1,4 +1,4 @@
-"""Day 1 loader from analysis.ipynb as importable functions, so any domain can be loaded the same way."""
+"""Loading code from 01_load_clean.ipynb as importable functions, so any domain can be loaded the same way."""
 import json
 import re
 from pathlib import Path
