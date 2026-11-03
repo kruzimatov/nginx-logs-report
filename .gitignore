@@ -1,13 +1,8 @@
 nginx-logs/
 nginx-logs-old-bak/
 data/
+local/
 .venv/
 __pycache__/
 .ipynb_checkpoints/
 .DS_Store
-day3.ipynb
-practice_day1.ipynb
-NOTEBOOKS_GUIDE.html
-SESSION_NOTES.md
-something.html
-day4.ipynb
