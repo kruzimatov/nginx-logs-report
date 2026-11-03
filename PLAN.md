@@ -52,18 +52,18 @@ Some days the JSON file has fewer lines than its text twin (example: `attendance
 - [x] Use the real client IP (`client_address`), not Cloudflare (`proxy_ip`).
 
 ## Day 3: Errors and causes
-- [ ] 5xx timeline per subdomain. Which services are fully down vs failing sometimes?
-- [ ] Parse the 2 error logs (hstaff, api-hstaff). Group by error type: refused, timed out, premature close, forbidden.
-- [ ] Correlate: errors by hour, after `nginx_reload.log` events, by upstream address.
-- [ ] Scanners: many 404/444 from one IP on paths like `/.env`, `/.git`, `/wp-admin`, `/@fs/`.
-- [ ] A 200 on `/.env` is not proof of a leak. Compare its response size with the homepage size.
-- [ ] Write down a likely cause for each main error group.
+- [x] 5xx timeline per subdomain. Which services are fully down vs failing sometimes?
+- [x] Parse the 2 error logs (hstaff, api-hstaff). Group by error type: refused, timed out, premature close, forbidden.
+- [x] Correlate: errors by hour, after `nginx_reload.log` events, by upstream address.
+- [x] Scanners: many 404/444 from one IP on paths like `/.env`, `/.git`, `/wp-admin`, `/@fs/`.
+- [x] A 200 on `/.env` is not proof of a leak. Compare its response size with the homepage size.
+- [x] Write down a likely cause for each main error group.
 
 ## Day 4: Dashboard and generalize
-- [ ] Learn Streamlit basics (rerun model, `@st.cache_data`), about 1 to 2 hours.
-- [ ] Dashboard reads the Parquet: filters for domain, subdomain, date range, status. Metrics + plotly charts.
-- [ ] Run the loader on the other domains to prove it works unchanged.
-- [ ] Final pass on the notebook: clear story, findings at the top.
+- [x] Learn Streamlit basics (rerun model, `@st.cache_data`), about 1 to 2 hours.
+- [x] Dashboard reads the Parquet: filters for domain, subdomain, date range, status. Metrics + plotly charts.
+- [x] Run the loader on the other domains to prove it works unchanged.
+- [x] Final pass on the notebook: clear story, findings at the top.
 
 ## Privacy
 - Logs contain real user IPs and may contain tokens in URLs. Mask tokens before showing anything.
