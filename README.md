@@ -3,6 +3,8 @@
 Analysis of one week of nginx access and error logs for humblebee.ai and hbai.dev
 (1,187,827 requests, 2026-10-21 to 2026-10-29, Asia/Seoul time).
 
+**Read the report: [REPORT.md](REPORT.md)**
+
 ## Notebooks
 
 | Notebook | What it does |
@@ -20,7 +22,7 @@ Analysis of one week of nginx access and error logs for humblebee.ai and hbai.de
 - The `$remote_user` field contained API keys and an email. The column was dropped.
 - Machines send most traffic: monitoring 35.3%, browsers 31.0%, scripts 21.8%, AI agents 7.7%.
 - speakology, smart-office and repo-holmes were down the whole week (mostly 502).
-- On 2026-10-28 up to 12 services failed in the same 10 minutes: a shared failure, not one app.
+- On Oct 27 and Oct 28, up to 13 services failed in the same 10 minutes: a shared failure, not one app.
 - hstaff `/mcp` errors all go to one upstream: refused connections and read timeouts.
 - nginx reloads do not cause errors. 200 responses on secret paths are catch-all pages, no evidence of a leak.
 
@@ -34,7 +36,7 @@ They contain real visitor IPs, locations and request URLs. Public IPs shown in n
 ```
 python -m venv .venv
 source .venv/bin/activate
-pip install pandas pyarrow plotly jupyter streamlit
+pip install pandas pyarrow plotly kaleido jupyter streamlit
 ```
 
 1. Put the logs in `nginx-logs/<domain>/<subdomain>/`.
